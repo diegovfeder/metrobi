@@ -5,9 +5,8 @@
  * To run a specific challenge, uncomment its execution line below.
  *
  * Running the challenges:
- * - For questions 1, 2, 4, 5, 7: Simply uncomment the relevant line
- * - For question 3 (React): Use `bun run react-dev` (requires additional setup)
- * - For question 6 (Animation): Open the browser at http://localhost:3000 after running
+ * - For questions 1, 2, 4, 5, 7: Simply `bun start`
+ * - For questions 3, 6 (React): Run `bun react`
  *
  * @example
  * bun run index.ts

@@ -4,15 +4,17 @@
  * @returns Array containing only the duplicate elements
  */
 export function findDuplicates<T>(arr: T[]): T[] {
-  const seen = new Set<T>()
-  const duplicates = new Set<T>()
+  const frequency = new Map<T, number>()
+  const duplicates: T[] = []
 
-  arr.forEach((item) => {
-    if (seen.has(item)) {
-      duplicates.add(item)
+  for (const item of arr) {
+    const count = (frequency.get(item) || 0) + 1
+    frequency.set(item, count)
+
+    if (count === 2) {
+      duplicates.push(item)
     }
-    seen.add(item)
-  })
+  }
 
-  return Array.from(duplicates)
+  return duplicates
 }

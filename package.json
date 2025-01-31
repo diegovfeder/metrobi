@@ -5,7 +5,7 @@
   "author": "@diegovfeder",
   "scripts": {
     "start": "bun run index.ts",
-    "react-dev": "vite",
+    "react": "vite",
     "build": "vite build",
     "test": "vitest"
   },

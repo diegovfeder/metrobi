@@ -1,15 +1,17 @@
-/**
- * Finds the highest safe floor for egg drops
- * @returns The minimum number of drops needed in worst case
+/*
+ * @param {number} [floors=100] - The total number of floors to test (default: 100).
+ * @returns {number} The minimal number of drops required in the worst-case scenario.
+ *
+ * @example
+ * // Calculate drops for 100 floors
+ * const drops = findEggDropFloor();
+ * // Returns: 14
  */
-export function findEggDropFloor(): number {
-  const floors = 100
-  const eggs = 2
-
-  // Using optimal strategy: x + (x-1) + (x-2) + ... + 1 >= 100
-  // This gives us optimal number of drops in worst case
-  let x = 14 // First try covers 14 floors
-  let sum = (x * (x + 1)) / 2
-
-  return x // This will require maximum 14 drops in worst case
+export function findEggDropFloor(floors: number = 100): number {
+  let drops = 0
+  // Increment drops until the triangular number exceeds total floors
+  while ((drops * (drops + 1)) / 2 < floors) {
+    drops++
+  }
+  return drops
 }
